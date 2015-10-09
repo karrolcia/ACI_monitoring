@@ -20,8 +20,11 @@ aerosols = I_max - 9;
 aerosols(aerosols <= 0) = 1;
     
 cloud = I_max+2;
+
 aero_level = aerosols(is_data) ; % Attenuated Backscatter
 cloud_level = cloud(is_data)   ; % Radar Reflectivity Factor
+% aero_level = zeros(size(cloud_level));
+% aero_level(:,:) = 6;
 
 for i = 1:length(is_data)
 data_lidar_level(i) = data_lidar(i,aero_level(i));

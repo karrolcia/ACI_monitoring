@@ -52,7 +52,7 @@ clear all;
 %% Set the start time and end time (default 0 to 24)
 % if nargin<3,
     time_start = 0;
-    time_end = 14;
+    time_end = 24;
     max_height = 3000;
 % end;  
 
