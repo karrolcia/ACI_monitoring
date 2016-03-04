@@ -1,8 +1,8 @@
-function hist_okt(X,n)
+function hist_ok(X,n)
 
 X=X(:);
-X(isnan(X))=[];
-X(isinf(X))=[];
+% X(isnan(X))=[];
+% X(isinf(X))=[];
 
 %h=figure;
 hist(X,n);
@@ -13,13 +13,13 @@ set(gca,'FontSize',11);
 h1 = findobj(gca,'Type','patch');
 set(h1,'FaceColor',[0.8 0.8 0.8],'EdgeColor','k','LineWidth',1);
 
-%M=nanmean(X(:));
-%S=nanstd(X(:));
+M=nanmean(X(:));
+S=nanstd(X(:));
 M=mean(X(:));
 S=std(X(:));
 RSD=S./M;
 a=get(gca,'XLim');
-x=max(a)-(max(a)-min(a))/4;
+x=max(a)-(max(a)-min(a))/3.5;
 b=get(gca,'YLim');
 y=max(b)-(max(b)-min(b))/10;
 
